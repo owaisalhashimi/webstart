@@ -1,27 +1,65 @@
+:root {
+    --fonts-sans: Atkinson Hyperlegible, system-ui, Arial, sans-serif;
+    --line-height-0: 1.5;
+    --space-0: calc(var(--line-height-0) * 1rem);
+    --space-1: calc(var(--line-height-0) * 2rem);
+    --space-2: calc(var(--line-height-0) * 3rem);
+    --font-size-0: max(19px, 1.5vw);
+    --font-size-1: 1.083rem;
+    --font-size-2: 1.166rem;
+    --font-size-3: 1.25rem
+    --font-size-4: 1.333rem;
+    --font-size-5: 1.416rem;
+    --font-size-6: 1.5rem;
+    --screen-content-width: calc(100% - var(--space-0));
+    --color-scheme-dark-bg: #121212;
+    --color-scheme-dark-fg: #eeeeee;
+    --color-scheme-light-bg: #eeeeee;
+    --color-scheme-light-fg: #121212;
+}
+
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
 }
 html {
     block-size: 100%;
-    font-size: max(19px, 1.5vw);
+    font-size: var(--font-size-0);
 }
 body {
     min-block-size: 100%;
-    font-family: Atkinson Hyperlegible, system-ui, Arial, sans-serif;
+    font-family: var(--fonts-sans);
     font-size: 1em;
-    line-height: 1.5;
+    line-height: var(--line-height-0);
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr auto;
-    gap: 1.5rem 0;
+    gap: var(--space-0) 0;
 }
 a:any-link {
-    color: blue;
+    color: dodgerblue;
     text-underline-offset: .25ch;
 }
 main {
     --max-width: calc(100% - 1.5rem);
-    inline-size: min(60ch, var(--max-width));
+    inline-size: min(60ch, var(--screen-content-width));
     margin-inline: auto;
+}
+h1 {
+    font-size: var(--font-size-6);
+}
+h2 {
+    font-size: var(--font-size-5);
+}
+h3 {
+    font-size: var(--font-size-4);
+}
+h4 {
+    font-size: var(--font-size-3);
+}
+h5 {
+    font-size: var(--font-size-2);
+}
+h6 {
+    font-size: var(--font-size-1);
 }
