@@ -1,9 +1,9 @@
 :root {
     --fonts-sans: Atkinson Hyperlegible, system-ui, Arial, sans-serif;
     --line-height-0: 1.5;
-    --space-0: calc(var(--line-height-0) * 1rem);
-    --space-1: calc(var(--line-height-0) * 2rem);
-    --space-2: calc(var(--line-height-0) * 3rem);
+    --space-0: calc(var(--line-height-0) * .5rem);
+    --space-1: calc(var(--line-height-0) * 1rem);
+    --space-2: calc(var(--line-height-0) * 2rem);
     --font-size-0: max(19px, 1.5vw);
     --font-size-1: 1.083rem;
     --font-size-2: 1.166rem;
@@ -16,8 +16,10 @@
     --color-scheme-dark-fg: #eeeeee;
     --color-scheme-light-bg: #eeeeee;
     --color-scheme-light-fg: #121212;
+    --color-surface-0: #222;
+    --color-surface-1: #{lighten(#222, 16%)};
+    --color-surface-2: #{lighten(#222, 32%)};
 }
-
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
@@ -35,6 +37,10 @@ body {
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr auto;
     gap: var(--space-0) 0;
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--color-scheme-dark-bg);
+        color: var(--color-scheme-dark-fg);
+    }
 }
 a:any-link {
     color: dodgerblue;
@@ -62,4 +68,10 @@ h5 {
 }
 h6 {
     font-size: var(--font-size-1);
+}
+audio, figure, video {
+    display: block;
+}
+audio, blockquote, dl, figure, ol, p, table, ul, video {
+    margin-block: var(--space-0);
 }
